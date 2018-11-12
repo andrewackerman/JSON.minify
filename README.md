@@ -9,14 +9,14 @@ Minify blocks of JSON-like content into valid JSON by removing all white-space *
 JSON parsers (like JavaScript's `JSON.parse()` parser) generally don't consider JSON with comments to be valid and parseable. So, the intended usage is of this project is to minify development-friendly JSON (i.e with comments) to valid JSON before parsing, such as:
 
 ```dart
-JSON.parse(JSON.minify(str))
+json.decode(minify(str));
 ```
 
 Now you can maintain development-friendly JSON documents, where your source is formatted & commented, but minify them before parsing or before transmitting them over-the-wire.
 
 As transmitting bloated (ie, with comments/white-space) JSON would be wasteful and silly, this JSON minify can also be used for server-side processing environments where you can strip comments/white-space from JSON before parsing a JSON document or before transmitting such over-the-wire from server to browser.
 
-Though comments are not officially part of the JSON standard, [this][yahoo-groups-link] post from Douglas Crockford back in late 2005 helps explain the motivation behind this project.
+Though comments are not officially part of the JSON standard, [this](http://tech.groups.yahoo.com/group/json/message/152) post from Douglas Crockford back in late 2005 helps explain the motivation behind this project.
 
 > A JSON encoder MUST NOT output comments. A JSON decoder MAY accept and ignore comments.
 
