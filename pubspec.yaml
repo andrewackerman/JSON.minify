@@ -1,0 +1,7 @@
+name: JSON.minify
+version: 1.0.0
+description: A Dart port of the JSON.minify library.
+author: Andrew Ackerman
+homepage: https://github.com/getify/JSON.minify
+dev_dependencies:
+  test: '>=1.5.1 <2.0.0'
